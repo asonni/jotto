@@ -1,1 +1,1 @@
-## Jotto App With ReactJS and Enzyme and Jest Testing (TDD)
+## Jotto App With ReactJS, Enzyme, Jest and Testing (TDD)
