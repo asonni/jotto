@@ -1,1 +1,2 @@
-## Jotto App With ReactJS, Enzyme, Jest and TDD
+## Jotto Game For Guessed Word
+### The Game Made By ReactJS, Redux, Enzyme, Jest and TDD
