@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import Congrats from './Congrats';
 import GuessedWords from './GuessedWords';
+import Input from './Input';
+import { getSecretWord } from './actions';
 import './App.css';
 
 class App extends Component {
@@ -8,13 +12,23 @@ class App extends Component {
     return (
       <div className="container">
         <h1>Jotto</h1>
-        <Congrats success />
-        <GuessedWords
-          guessedWords={[{ guessedWord: 'train', letterMatchCount: 3 }]}
-        />
+        <Congrats success={this.props.success} />
+        <Input />
+        <GuessedWords guessedWords={this.props.guessedWords} />
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = ({ success, guessedWords, secretWord }) => ({
+  success,
+  guessedWords,
+  secretWord
+});
+
+const mapDispatchToProps = { getSecretWord };
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
